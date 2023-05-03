@@ -1,7 +1,7 @@
 @use 'variaveis';
 
 .hero{
-   padding: 2vw;
+   padding:  2vw;
     min-height: 50vh;
     text-align: center;
     background-image: url('../images/hero_desktop.jpeg');
@@ -49,6 +49,7 @@
                     border-radius: 4px;
                     margin-top: 2vw;
                     margin-bottom: 8px;
+                    cursor: pointer;
                 }
 
              
