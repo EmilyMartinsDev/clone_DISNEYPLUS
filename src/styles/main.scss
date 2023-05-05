@@ -3,6 +3,9 @@
 @use 'shows';
 @use 'plans';
 @use 'devices';
+@use 'faq';
+@use 'footer.scss';
+@use 'header.scss';
 
 @font-face{
     font-family: 'Avenir';
@@ -20,6 +23,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Avenir', sans-serif ;
+    list-style: none;
 }
 
 @mixin text($font-size: 16px){
@@ -67,7 +71,9 @@ body{
 .button{
 
         border: none;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         height: 60px;
         font-size: 18px;
@@ -75,9 +81,30 @@ body{
         background-color: #6421ff;
         text-transform: uppercase;
         border-radius: 4px;
-        margin-top: 2vw;
-        margin-bottom: 8px;
+        text-decoration: none;
+        padding: 8px 14px;
         cursor: pointer;
+        letter-spacing: 1px;
+
+        border: 1px solid variaveis.$cor-fundo;
+        &:hover{
+            background-color: lighten(#6421ff, 3%);
+        }
+        &--sec{
+            border-color: variaveis.$cor-fundo-btnSec;
+            background-color: variaveis.$cor-fundo-btnSec;
+            &:hover{
+                background-color: lighten(variaveis.$cor-fundo-btnSec, 3%);
+            }
+        }
+        &--dark{
+            border-color:  variaveis.$cor-fundo-btnDark;
+            background-color: variaveis.$cor-fundo-btnDark;
+            &:hover{
+                background-color: variaveis.$cor-texto-secundario;
+                color: variaveis.$cor-fundo-btnDark;
+            }
+        }
 
 }
 

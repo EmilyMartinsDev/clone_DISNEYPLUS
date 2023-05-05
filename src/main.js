@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', function(){
     const buttons = document.querySelectorAll('[data-tab-button]');
+    const questions = document.querySelectorAll('[data-faq-question]')
+    const hero = document.querySelector('.hero');
+    const heightHero = hero.clientHeight; // para capturar altura do elemento
 
+    window.addEventListener('scroll', ()=>{
+        const position = window.scrollY ;
+        if(position < heightHero){
+            hiddenElementHeader();
+        }else{
+            showElementHeader();
+        }
+       
+    });
 
     for(let i = 0 ; i < buttons.length; i++){
 
@@ -17,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function(){
         }); 
 
     }
+    for(let i = 0 ; i < questions.length; i++){
+        questions[i].addEventListener('click', openAndclose)
+    }
+
 
     function escondeButton(){
 
@@ -35,3 +51,17 @@ function escondeAbas(){
     }
 }
 
+function  openAndclose(element){
+    const classe ='faq__questions__items--is-open';
+    const fatherElement =  element.target.parentNode;
+    fatherElement.classList.toggle(classe)
+}
+
+function hiddenElementHeader(){
+    const header = document.querySelector('.header');
+    header.classList.add("header--is-hidden");
+}
+function showElementHeader(){
+    const header = document.querySelector('.header');
+    header.classList.remove("header--is-hidden");
+}
