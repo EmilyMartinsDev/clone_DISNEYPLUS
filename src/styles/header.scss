@@ -22,11 +22,18 @@
         max-width: 80px;
         width: 100%;
         margin: 5px;
+        @media (max-width: 768px){
+           max-width: 64px;
+            }
     }
     &__container{
         padding: 8px 36px;
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 768px){
+           padding: 0;
+        }
        
     }
         &__links{
@@ -40,6 +47,15 @@
 
         .button{
             height: 50px;
+
+            @media (max-width: 768px){
+                display: block;
+                font-size: 13px;
+                padding: 8px 11px;
+                height: 40px;
+                letter-spacing: 0;
+
+                }
         }
   
 }
